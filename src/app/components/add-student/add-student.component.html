@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Add Student</h2>
+    <form (ngSubmit)="onSubmit()" class="bg-light p-4 rounded shadow-sm">
+        <div class="mb-3">
+            <label for="id" class="form-label">Student ID:</label>
+            <input type="number" id="id" [(ngModel)]="student.id" name="id" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" [(ngModel)]="student.name" name="name" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" [(ngModel)]="student.email" name="email" required class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Add Student</button>
+    </form>
+
+    <!-- Optionally, you can display messages on success or failure -->
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Subject ID</th>
+            <th scope="col">Subject Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let subject of subjects; let i = index" [ngClass]="{
+      'table-active': i % 8 === 0,
+      'table-primary': i % 8 === 1,
+      'table-secondary': i % 8 === 2,
+      'table-success': i % 8 === 3,
+      'table-danger': i % 8 === 4,
+      'table-warning': i % 8 === 5,
+      'table-info': i % 8 === 6,
+      'table-light': i % 8 === 7
+    }">
+            <td>{{ subject.id }}</td>
+            <td>{{ subject.name }}</td>
+        </tr>
+    </tbody>
+</table>
